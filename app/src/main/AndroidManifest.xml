@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="controls.rishabh.srmerp" >
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+
+    <permission
+        android:name="controls.rishabh.srmerp.permission.C2D_MESSAGE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="controls.rishabh.srmerp.permission.C2D_MESSAGE" />
+
+    <application
+        android:icon="@drawable/srmseal"
+        android:label="SRM ERP (API 19)"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name=".LoginScreenActivity"
+            android:label="@string/title_activity_login_screen" >
+        </activity>
+        <activity
+            android:name=".WelcomeActivity"
+            android:label="@string/title_activity_welcome" >
+        </activity>
+        <activity
+            android:name=".RegisterActivity"
+            android:label="@string/title_activity_register" >
+        </activity>
+        <activity
+            android:name=".AboutSRM"
+            android:label="@string/title_activity_about_srm"
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen" >
+        </activity>
+        <activity
+            android:name=".AboutUs"
+            android:label="@string/title_activity_about_us" >
+        </activity>
+        <activity
+            android:name=".Semtime"
+            android:label="@string/title_activity_semtime" >
+        </activity>
+        <activity
+            android:name=".CSE"
+            android:label="@string/title_activity_cse" >
+        </activity>
+        <activity
+            android:name=".Aerospace"
+            android:label="@string/title_activity_mechanical" >
+        </activity>
+        <activity
+            android:name=".Civil"
+            android:label="@string/title_activity_civil" >
+        </activity>
+        <activity
+            android:name=".Automobile"
+            android:label="@string/title_activity_automobile" >
+        </activity>
+        <activity
+            android:name=".IT"
+            android:label="@string/title_activity_it" >
+        </activity>
+        <activity
+            android:name=".ECE"
+            android:label="@string/title_activity_ece" >
+        </activity>
+        <activity
+            android:name=".EEE"
+            android:label="@string/title_activity_eee" >
+        </activity>
+        <activity
+            android:name=".Attendence"
+            android:label="@string/title_activity_attendence" >
+        </activity>
+
+        <activity
+            android:name=".StudentSubjectList"
+            android:label="@string/title_activity_student_subject_list" >
+        </activity>
+        <activity
+            android:name=".TestPerformance"
+            android:label="@string/title_activity_test_performance" >
+        </activity>
+        <activity
+            android:name=".Splash"
+            android:label="SRM ERP">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <service android:name="com.parse.PushService" />
+
+        <receiver android:name="com.parse.ParseBroadcastReceiver" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.USER_PRESENT" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="com.parse.GcmBroadcastReceiver"
+            android:permission="com.google.android.c2dm.permission.SEND" >
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+
+                <!-- IMPORTANT: Change "com.parse.tutorials.pushnotifications" to match your app's package name. -->
+                <category android:name="controls.rishabh.srmerp" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="com.parse.ParsePushBroadcastReceiver"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="com.parse.push.intent.RECEIVE" />
+                <action android:name="com.parse.push.intent.DELETE" />
+                <action android:name="com.parse.push.intent.OPEN" />
+            </intent-filter>
+        </receiver>
+
+
+    </application>
+
+</manifest>
